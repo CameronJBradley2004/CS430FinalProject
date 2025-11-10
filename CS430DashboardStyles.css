@@ -1,0 +1,38 @@
+body {height: 1440px;}
+
+.profile-banner { 
+	display: flex;
+	height: 144px;
+	width: 100%;		
+}
+.profile-banner-left { justify-content: flex-start;
+			width: 50%;
+			height: inherit;
+}
+.profile-banner-right { justify-content: flex-end;
+			width: 50%;
+			height: inherit;
+}
+
+.graphs-box { 
+	display: grid;
+	height: 1080px;
+}
+
+.crewai-banner { 
+	display: flex;
+	height: 216px;
+	width: 100%
+}
+.crewai-banner-image {
+	width: 15%;
+	height: inherit;
+	display: flex;
+	justify-content: center;
+}
+.crewai-banner-message {
+	width: 85%;
+	height: inherit;
+	justify-content: center;
+	text-align: center;
+}
