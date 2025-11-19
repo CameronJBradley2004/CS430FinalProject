@@ -4,22 +4,31 @@
 const usernameElement = document.getElementById("username");
 const passwordElement = document.getElementById("password");
 
+//Set the values
 username = usernameElement.value;
 password = passwordElement.value;
 
-//SHA256 hash the password
+//Create the json
+loginData = {
+	username: $username,
+	password: $password,
+ };
+ 
+//Set the url
+url = "/api/process"
 
-//sign-in-data = {
-//	username: $username,
-//	password: $password,
-// };
+//Set the options 
+fetch-options = {
+	method: 'POST',
+	headers: {'Content-Type': 'application/json'},
+	credentials: "include",
+	body: JSON.stringify(loginData)
+};
 
-//fetch-options = {
-//	method: 'POST',
-//	headers: {'Content-Type': 'application/json'},
-//	credentials: "include",
-//	body: JSON.stringify(data)
-//};
-
+//Do the fetch
 //fetch(url, options)
 //	.then(res => {if(res.redirected){window.location.href = res.url;}});
+
+fetch(url, options)
+	.then(r => r.json())
+	.then(data => console.log(data))
