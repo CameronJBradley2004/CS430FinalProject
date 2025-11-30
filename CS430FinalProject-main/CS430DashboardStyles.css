@@ -1,0 +1,78 @@
+body {height: 1440px;}
+
+.profile-banner { 
+	display: flex;
+	height: 10%;
+	width: 100%;
+	background-color: #f2f2f2;
+	border-radius: 40px;
+}
+.profile-banner-left { 
+	display: flex;
+	justify-content: flex-start;
+	width: 50%;
+	height: 100%;
+	padding: 0px 40px;
+	align-items: center;	
+}
+.profile-banner-left img {height: 80%;}
+
+.profile-banner-right { 
+	display: flex;	
+	justify-content: flex-end;
+	width: 50%;
+	height: 100%;
+	padding: 0px 40px;
+	align-items: center;	
+}
+.add-entry-button {
+	background-color: #4caf50;
+	color: white;
+	height: 50%;
+	width: 30%;
+	font-weight: bold;
+	font-size-adjust: .7;
+	padding: 10px;
+	border-radius: 30px;
+}
+
+.graphs-box { 
+	display: grid;
+	height: 75%;
+}
+
+.crewai-banner { 
+	display: flex;
+	height: 15%;
+	width: 100%;
+	background-color: #f2f2f2;
+	border-radius: 40px;
+	align-items: center;
+}
+.crewai-banner-left {
+	height: 100%;
+	width: 15%;
+	display: flex;
+	justify-content: center;
+}
+
+.crewai-banner-image{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	padding: 10px;
+}
+.crewai-banner-image img {height: 100%; width: 100%;}
+
+.crewai-banner-message {
+	width: 80%;
+	height: 70%;
+	justify-content: center;
+	text-align: center;
+	background-color: white;
+	border-radius: 30px;
+}
+

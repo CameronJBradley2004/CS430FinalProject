@@ -1,0 +1,48 @@
+body {height: 100vh;}
+.login-div {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+.login-section-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	width: 50vh;
+	background-color: #f2f2f2;
+	border-radius: 50px;
+	margin: 100px;
+}
+
+.input-section {
+	display: flex;
+	width: 50%;
+	justify-content: center;
+	flex-direction: column;
+	margin: 15px;
+}
+
+.input-div {
+	justify-content: flex-start;
+}
+
+.submit-button-section {
+	justify-content: flex-start;
+	height: 50%;
+	width: 100%;
+	padding: 0px 10px 0px 10px;
+}
+
+.sign-in-button {
+	width: 90%;
+	height: 60%;
+	border-radius: 10px;
+	background-color: #4caf50;
+	color: white;
+	font-weight: bold;
+}

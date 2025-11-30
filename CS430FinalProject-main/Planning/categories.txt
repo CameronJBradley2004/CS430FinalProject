@@ -1,0 +1,71 @@
+housing 
+	mortgage/rent
+	housing
+	insurance
+	repairs
+	
+transportation 
+	payment
+	maintenence
+	gas 
+	parking
+	registration 
+	insurance
+	tolls
+	
+food 
+	groceries 
+	restaurants
+	
+utilities
+	electricity
+	gas
+	water
+	phone
+	internet
+	garbage
+	
+insurance 
+	housing
+	transportation
+	personal
+	life 
+	
+clothing
+	clothes
+	shoes
+	
+medical 
+	general
+	specialty
+	medication 
+	
+supplies 
+	consumable
+	nonconsumable 
+	
+health
+	gym 
+	salon 
+	cosmetics 
+	mental
+	
+future 
+	savings 
+	investment 
+	debt repayment 
+	
+entertainment 
+	subscriptions 
+	events 
+	games/movies
+	alcohol/recreational drugs
+	hobbies
+	travel
+	
+miscellaneous
+	taxes
+	school supplies
+	gifts
+	donations
+	pets
