@@ -1,4 +1,8 @@
-//Set web server url for fetch request
+const form = document.getElementById("loginForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  //Set web server url for fetch request
 
 //Pull username and password
 const usernameElement = document.getElementById("username");
@@ -10,15 +14,15 @@ password = passwordElement.value;
 
 //Create the json
 loginData = {
-	username: $username,
-	password: $password,
+	username: username,
+	password: password,
  };
  
 //Set the url
-url = "/api/process"
+url = "/api/login"
 
 //Set the options 
-fetch-options = {
+fetchOptions = {
 	method: 'POST',
 	headers: {'Content-Type': 'application/json'},
 	credentials: "include",
@@ -29,6 +33,7 @@ fetch-options = {
 //fetch(url, options)
 //	.then(res => {if(res.redirected){window.location.href = res.url;}});
 
-fetch(url, options)
+fetch(url, fetchOptions)
 	.then(r => r.json())
-	.then(data => console.log(data))
+	.then(() => {window.location.href = "/CS430Dashboard.html";});
+});

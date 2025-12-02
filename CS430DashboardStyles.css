@@ -25,11 +25,42 @@ body {height: 1440px;}
 	padding: 0px 40px;
 	align-items: center;	
 }
+.profile-container{
+	position: relative;
+	display: inline-block;
+}
+.profile-pic {
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+}
+
+.dropdown {
+	display: none;
+	position: absolute;
+	top: 50px;
+	right: 0;
+	background: white;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.15)
+}
+.dropdown a {
+	display: block;
+	padding: 6px 0;
+	text-decoration: none;
+	color: black;
+}
+.dropdown a:hover {
+	background:#eee;
+
+}
 .add-entry-button {
 	background-color: #4caf50;
 	color: white;
 	height: 50%;
-	width: 30%;
+	width: 20%;
 	font-weight: bold;
 	font-size-adjust: .7;
 	padding: 10px;
@@ -39,6 +70,14 @@ body {height: 1440px;}
 .graphs-box { 
 	display: grid;
 	height: 75%;
+}
+.graphs-box-inline {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 70px;
+	align-items: center;
+	justify-content: center;
 }
 
 .crewai-banner { 
@@ -65,7 +104,7 @@ body {height: 1440px;}
 	justify-content: center;
 	padding: 10px;
 }
-.crewai-banner-image img {height: 100%; width: 100%;}
+.crewai-banner-image img {height: 120px; width: 120px; margin: 0px 40%;}
 
 .crewai-banner-message {
 	width: 80%;

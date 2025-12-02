@@ -5,13 +5,19 @@
 		<meta charset = "utf-8" />
 		<link rel="stylesheet" href="CS430DashboardStyles.css" type="text/css">
 	</head>
-	
 	<body>
+	<script src="https://cdn.plot.ly/plotly-3.3.0.min.js" charset="utf-8"></script>
 		<!-- Profile Banner -->
 		<div class="profile-banner">
 			<!-- Left side of profile banner -->
 			<div class="profile-banner-left">
-				<img src="Profile-icon.png" alt="Profile Icon"> 
+				<div class="profile-container">
+					<img class="profile-pic" id="profilePic" src="Profile-icon.png" alt="Profile Icon"> 
+
+					<div class="dropdown" id="dropdownMenu">
+						<a href="#">Logout</a>
+					</div>
+				</div>
 			</div>
 			
 			<!-- Right side of profile banner -->
@@ -23,11 +29,15 @@
 		<!-- Graphs Box -->
 		<div class="graphs-box">
 			<!-- Top graphs box -->
-			<div>
+			<div class="graphs-box-inline">
+				<div class="graph" id="graphDiv1"></div>
+				<div class="graph" id="graphDiv2"></div>
 			</div>
 			
 			<!-- Bottom graphs box -->
-			<div>
+			<div class="graphs-box-inline">
+				<div class="graph" id="graphDiv3"></div>
+				<div class="graph" id="graphDiv4"></div>
 			</div>
 		</div>
 		
@@ -46,6 +56,6 @@
 			<div class="crewai-banner-message">
 			</div>
 		</div>
-		
+		<script src="dashboard.js"></script>
 	</body>
 </html>
