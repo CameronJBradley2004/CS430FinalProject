@@ -15,15 +15,15 @@
 	
 		\subsection*{Purpose}
 	
-			\paragraph{} Our goal when creating this project was to make a spending tracking tool we would actually use. This web app is a place where purchases can be stored, recalled, and analyzed. We didn't like modern budgeting apps with the extra fluff of telling you where and how your money should be spent. The idea of something smaller and specialized created this spending tracker, where the only goal is to store where your money is spent. We track what you spent money on categorically, as well as the amount, the location, the time and data, the medium of payment, and whether or not it was spent online. This allows for analytics to be generated that show your spending habits in a digestible format.
+			\paragraph{} Our goal when creating this project was to make a spending tracking tool we would actually use. This web app is a place where purchases can be stored, recalled, and analyzed. We didn't like modern budgeting apps with the extra fluff of telling you where and how your money should be spent. The idea of something smaller and specialized created this spending tracker, where the only goal is to store where your money goes. We track what you spent money on categorically, as well as the amount, the location, the time and data, the medium of payment, and whether or not it was spent online. This allows for analytics to be generated that show your spending habits in a digestible format, while keeping data entry simple.
 	
 		\subsection*{Scope}
 		
-			\paragraph{} The scope of this project is intentionally narrow. We did not intend to compete with bigger budgeting apps who have more features and better analytics. Our sole goal was to create a centralized ledger and analysis tool to show you where your money ends up. This required the creation of one tool, the web app itself. Included in this are portions to log in, view enter new purchases, and look at analytics for past purchases.
+			\paragraph{} The scope of this project is intentionally narrow. We did not intend to compete with bigger budgeting apps who have more features and better analytics. Our sole goal was to create a centralized ledger and analysis tool to show you where your money ends up. This required the creation of one tool, the web app itself. Included in this are portions to log in, enter new purchases, and look at analytics for past purchases.
 		
 		\subsection*{Details}
 		
-			\paragraph{} This project has a relatively straightforward 'how'. It is a server hosted web application, hosted in our basement on Ubuntu server. The app uses flask for the web framework to keep everything simple and light. The backend database is hosted on Microsoft SQL Server 2025. Plotly was used for the creation of all the graphs and charts. Implementation of the login system is done with cookies, as modern pages do.
+			\paragraph{} This project has a relatively straightforward 'how'. It is a server hosted web application, hosted in our basement on Ubuntu server. The app uses Flask for the web framework to keep everything simple and light. The backend database is hosted on Microsoft SQL Server 2025. Plotly was used for the creation of all the graphs and charts. Implementation of the login system is done with cookies, as modern pages do.
 	
 	\section*{Contributions}
 	
@@ -62,7 +62,7 @@
 		\subsection*{Features}
 		
 			\begin{itemize}
-				\item Secure log in system with cookies
+				\item Secure log in system using cookies
 				\item Password changing
 				\item Add new purchases
 				\item See previous 5 purchases
@@ -74,16 +74,68 @@
 	\section*{Technical Breakdown}
 	
 		\subsection*{Component Implementation}
-				%The frontend is build in HTML and JavaScript to handle login, creating users, resetting passwords, adding data, and returning tables via Flask.
-				%The backend runs on Python to process the user requests and return graphs for the dashboard all of which is hosted on an Apache 2 server.
-				%Database ------insert things here
-				%The hosting runs on a hypervisor running Ubuntu Server.
+		
+			\paragraph{Frontend} The frontend of this project has many components that make it natural and intuitive for users. Starting at the highest level the main front facing pages are all built with HTML and CSS to create pages that are appealing to look at and self explanatory to use. HTML forms are the backbone of these pages, these forms allow for ease of transfer from the user to the system. The entries for these forms are collected using JavaScript. These forms include; login, creating users, resetting passwords, and entering purchases. Another component of the front end is the AI agent. This agent was implemented using CrewAI with a free Gemini model. The agent is available to be asked questions about purchase history and spending data. Finally, the largest feature of the frontend are the graphs and charts. These figures were created using plotly. The graphs include a table of your last 5 purchases, an area chart showing cumulative spending over different time frames, 2 pie charts that break down your purchases by count and amount, and finally a map chart that shows where your purchases were made. These figures are created on the backend are returned to the frontend using Flask.
+			
+			\paragraph{Backend} The backend of this project consists of three main components; the database, the data analytics, and the collection of data from the user. The data is collected from the user using python, this is done with the help of an apache 2 server to collect, transform, and pipeline the data from the JavaScript to the backend. This also includes the processing of user requests, such as pulling the graphs. Next, the database is the backbone of this project. The database is ran as a Microsoft SQL Server 2025 database, locally hosted. The database runs on the database schema you will see below in Figure 1. This schema allows for separation of data into logical tables, but is related in a way that is conducive for constructing queries efficiently. Finally, the data analytics is the most important part of the project as it is the portion that shows the users their data. The figures are created using plotly express and plotly graph objects. The figures get their data from SQL queries, using pandas to read the queries into dataframes, occasionally some extra processing was required to get the data ready to be plotted. This included timeslicing and pivoting.
+			
+			\paragraph{System Architecture} The system is a locally hosted type 1 hypervisor running Ubuntu server on a virtual machine. The front end is facilitated with Flask, and the backend is hosted on Apache 2.
+			
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.35]{CS430ProjectERD.png}
+				\caption{The ERD of the spending database}
+			\end{figure} 
 		
 		\subsection*{Packages/Tools}
-				%The frontend is build in HTML, CSS, with custom and Plotly.js JavaScript supporting it. That communicates with the backend that runs Python which also includes SQL.
-				%We used the Fetch API, Flask backend, and Apache 2 webserver for request proccessing.
-				%Common python libraries like Pandas, SQLAlchemy, Secrets, Hashlib, Plotly, and Geopy. Some standard system libraries were also included such as DateTime.
-				%Hardware tools include Proxmox, a Type 1 Hypervisor, and standard networking equipment.
-				%Majority of the project was built in Jupyter Notebook for the SQL, Notepad for general code writing, and Nano for debugging.
+		
+			\paragraph{Languages}
+				\begin{itemize}
+					\item HTML
+						\subitem Frontend bones
+					\item CSS
+						\subitem Frontend styling
+					\item JS
+						\subitem Adds front end dynamicness
+					\item Python
+						\subitem Standard usage for data analytics
+					\item SQL
+						\subitem Fetching database records
+				\end{itemize}
+				
+			\paragraph{Packages}
+				\begin{itemize}
+					\item Plotly/Plotly.js
+						\subitem Graph creation
+					\item Pandas
+						\subitem Data analytics
+					\item Hashlib
+						\subitem Password hashing
+					\item Secrets
+						\subitem Password hashing
+					\item Geopy
+						\subitem Pulling location data
+					\item Datetime
+						\subitem Getting system time
+					\item SQLAlchemy
+						\subitem Connecting to Microsoft SQL Server
+					\item Fetch API
+						\subitem Asynchronous handling
+					\item Flask
+						\subitem Webpage framework 
+					\item Apache
+						\subitem Web server
+				\end{itemize}
+			\paragraph{Tools}
+				\begin{itemize}
+					\item Proxmox 
+						\subitem Hardware host: Type 1 Hypervisor
+					\item VSCode
+						\subitem Commonplace tool for data analytics
+					\item Notepad
+						\subitem Creation of HTML, CSS, JS
+					\item Nano
+						\subitem Debugging on server
+				\end{itemize}
 
 \end{document}
