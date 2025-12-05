@@ -77,7 +77,7 @@
 		
 			\paragraph{Frontend} The frontend of this project has many components that make it natural and intuitive for users. Starting at the highest level the main front facing pages are all built with HTML and CSS to create pages that are appealing to look at and self explanatory to use. HTML forms are the backbone of these pages, these forms allow for ease of transfer from the user to the system. The entries for these forms are collected using JavaScript. These forms include; login, creating users, resetting passwords, and entering purchases. Another component of the front end is the AI agent. This agent was implemented using CrewAI with a free Gemini model. The agent is available to be asked questions about purchase history and spending data. Finally, the largest feature of the frontend are the graphs and charts. These figures were created using plotly. The graphs include a table of your last 5 purchases, an area chart showing cumulative spending over different time frames, 2 pie charts that break down your purchases by count and amount, and finally a map chart that shows where your purchases were made. These figures are created on the backend are returned to the frontend using Flask.
 			
-			\paragraph{Backend} The backend of this project consists of three main components; the database, the data analytics, and the collection of data from the user. The data is collected from the user using python, this is done with the help of an apache 2 server to collect, transform, and pipeline the data from the JavaScript to the backend. This also includes the processing of user requests, such as pulling the graphs. Next, the database is the backbone of this project. The database is ran as a Microsoft SQL Server 2025 database, locally hosted. The database runs on the database schema you will see below in Figure 1. This schema allows for separation of data into logical tables, but is related in a way that is conducive for constructing queries efficiently. Finally, the data analytics is the most important part of the project as it is the portion that shows the users their data. The figures are created using plotly express and plotly graph objects. The figures get their data from SQL queries, using pandas to read the queries into dataframes, occasionally some extra processing was required to get the data ready to be plotted. This included timeslicing and pivoting.
+			\paragraph{Backend} The backend of this project consists of three main components; the database, the data analytics, and the collection of data from the user. The data is collected from the user using python, this is done with the help of an Apache 2 server to collect, transform, and pipeline the data from the JavaScript to the backend. This also includes the processing of user requests, such as pulling the graphs. Next, the database is the backbone of this project. The database is ran as a Microsoft SQL Server 2025 database, locally hosted. The database runs on the database schema you will see below in Figure 1. This schema allows for separation of data into logical tables, but is related in a way that is conducive for constructing queries efficiently. Finally, the data analytics is the most important part of the project as it is the portion that shows the users their data. The figures are created using plotly express and plotly graph objects. The figures get their data from SQL queries, using pandas to read the queries into dataframes, occasionally some extra processing was required to get the data ready to be plotted. This included timeslicing and pivoting.
 			
 			\paragraph{System Architecture} The system is a locally hosted type 1 hypervisor running Ubuntu server on a virtual machine. The front end is facilitated with Flask, and the backend is hosted on Apache 2.
 			
@@ -123,8 +123,6 @@
 						\subitem Asynchronous handling
 					\item Flask
 						\subitem Webpage framework 
-					\item Apache
-						\subitem Web server
 				\end{itemize}
 			\paragraph{Tools}
 				\begin{itemize}
@@ -136,6 +134,8 @@
 						\subitem Creation of HTML, CSS, JS
 					\item Nano
 						\subitem Debugging on server
+					\item Apache
+						\subitem Web server
 				\end{itemize}
 
 \end{document}
